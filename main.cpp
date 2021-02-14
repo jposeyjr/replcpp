@@ -1,6 +1,7 @@
 #include <iostream>
-#include <utility>
-#include <iterator>
+#include <utility> //for std::swap 
+#include <iterator> //for std::size 
+#include <algorithm> // for std::sort
 
 struct Rectangle
 {
@@ -57,6 +58,16 @@ std::cout << rects[0].length << '\n';
 	// Now that the whole array is sorted, print our sorted array as proof it works
 	for (int index{ 0 }; index < length; ++index)
 		std::cout << array[index] << ' ';
+ 
+	std::cout << '\n';
+
+  //and easier way to do it 
+  	int array2[]{ 30, 50, 20, 10, 40 };
+ 
+	std::sort(std::begin(array2), std::end(array2));
+ 
+	for (int i{ 0 }; i < static_cast<int>(std::size(array2)); ++i)
+		std::cout << array2[i] << ' ';
  
 	std::cout << '\n';
  
